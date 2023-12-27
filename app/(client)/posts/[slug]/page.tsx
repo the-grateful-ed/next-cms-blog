@@ -1,4 +1,4 @@
-import Header from "@/app/components/Header";
+import Header from "@/app/components/header";
 import { Post } from "@/app/utils/interface";
 import { client } from "@/sanity/lib/client";
 import { urlForImage } from "@/sanity/lib/image";
@@ -6,7 +6,7 @@ import { PortableText } from "@portabletext/react";
 import { VT323 } from "next/font/google";
 import Image from "next/image";
 import Link from "next/link";
-import { notFound } from 'next/navigation'
+import { notFound } from "next/navigation";
 import React from "react";
 
 const dateFont = VT323({ weight: "400", subsets: ["latin"] });
@@ -59,7 +59,7 @@ const page = async ({ params }: Params) => {
         <div className="mt-5">
           {post?.tags?.map((tag) => (
             <Link key={tag?._id} href={`/tag/${tag.slug.current}`}>
-              <span className="mr-2 p-1 rounded-sm text-sm lowercase dark:bg-gray-950 border dark:border-gray-900">
+              <span className="mr-2 p-1 rounded-sm text-sm lowercase">
                 #{tag.name}
               </span>
             </Link>
@@ -67,7 +67,10 @@ const page = async ({ params }: Params) => {
         </div>
 
         <div className={richTextStyles}>
-          <PortableText value={post?.body} components={myPortableTextComponents} />
+          <PortableText
+            value={post?.body}
+            components={myPortableTextComponents}
+          />
         </div>
       </div>
     </div>

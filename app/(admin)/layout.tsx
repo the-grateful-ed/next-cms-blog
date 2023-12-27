@@ -1,4 +1,4 @@
-import CmsNavbar from "../components/CmsNavbar";
+import CmsNavbar from "@/app/components/cms-navbar";
 import { Provider } from "../utils/Provider";
 import "./globals.css";
 

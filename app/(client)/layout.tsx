@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
-import { Fira_Code } from "next/font/google";
+import { Poppins } from "next/font/google";
 import "./globals.css";
-import Navbar from "../components/Navbar";
+import Navbar from "../components/navbar";
 import { Provider } from "../utils/Provider";
+import Footer from "@/components/footer";
 
-const firaCode = Fira_Code({ subsets: ["latin"] });
+const poppins = Poppins({ subsets: ["latin"], weight: "500" });
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -19,11 +20,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${firaCode.className} h-full bg-amber-50 text-indigo-950 dark:bg-slate-950 dark:text-amber-50 dark:selection:bg-purple-500`}
+        className={`${poppins.className} h-full bg-background mx-auto max-w-7xl sm:px-6 lg:px-8`}
       >
         <Provider>
-          <Navbar />
-          <main className="h-full mx-auto max-w-5xl px-6">{children}</main>
+          <div className=" h-screen mx-auto max-w-4xl sm:px-6 lg:px-8">
+            <Navbar />
+            <main className="flex-1 mx-auto bg-accent">{children}</main>
+            <Footer />
+          </div>
         </Provider>
       </body>
     </html>

@@ -1,4 +1,4 @@
-import Header from "@/app/components/Header";
+import Header from "@/app/components/header";
 import PostComponent from "@/app/components/PostComponent";
 import { Post } from "@/app/utils/interface";
 import { client } from "@/sanity/lib/client";
@@ -38,9 +38,8 @@ const page = async ({ params }: Params) => {
     <div>
       <Header title={`#${params?.slug}`} tags />
       <div>
-        {posts?.length > 0 && posts?.map((post) => (
-          <PostComponent key={post?._id} post={post} />
-        ))}
+        {posts?.length > 0 &&
+          posts?.map((post) => <PostComponent key={post?._id} post={post} />)}
       </div>
     </div>
   );
