@@ -3,7 +3,8 @@ import Header from "../components/header";
 import { Post } from "../utils/interface";
 import PostComponent from "../components/post-component";
 import Hero from "../components/hero";
-import SocialIcons from "@/components/social-links";
+import SocialLinks from "../components/social-links";
+import MainContainer from "../components/main-container";
 
 async function getPosts() {
   const query = `
@@ -30,14 +31,13 @@ export default async function Home() {
   console.log(posts, "posts");
 
   return (
-    <div>
+    <MainContainer>
       <Hero />
-      <SocialIcons />
       <Header title="Articles" tags />
-      <div className="space-y-3 px-2">
+      <div className="space-y-14 py-3 mb-8">
         {posts?.length > 0 &&
           posts?.map((post) => <PostComponent key={post?._id} post={post} />)}
       </div>
-    </div>
+    </MainContainer>
   );
 }

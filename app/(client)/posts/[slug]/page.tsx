@@ -50,10 +50,10 @@ const page = async ({ params }: Params) => {
   }
 
   return (
-    <div>
+    <div className="bg-accent h-full">
       <Header title={post?.title} />
       <div className="text-center">
-        <span className={`${dateFont?.className} text-purple-500`}>
+        <span className={`${dateFont?.className} text-primary`}>
           {new Date(post?.publishedAt).toDateString()}
         </span>
         <div className="mt-5">
@@ -85,7 +85,7 @@ const myPortableTextComponents = {
       <Image
         src={urlForImage(value).url()}
         alt="Post"
-        width={700}
+        width={1100}
         height={700}
       />
     ),
@@ -95,7 +95,7 @@ const myPortableTextComponents = {
 const richTextStyles = `
 mt-14
 text-justify
-max-w-2xl
+max-w-4xl
 m-auto
 prose-headings:my-5
 prose-heading:text-2xl

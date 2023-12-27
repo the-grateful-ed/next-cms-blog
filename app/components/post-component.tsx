@@ -1,52 +1,54 @@
-import { JetBrains_Mono } from "next/font/google";
 import Link from "next/link";
 import React from "react";
-
-import { Badge } from "@/app/components/ui/badge";
-import { Card, CardHeader } from "@/app/components/ui/card";
-
-import { Post } from "@/app/utils/interface";
+import { Lilita_One, VT323 } from "next/font/google";
+import { Post } from "../utils/interface";
+import { Badge } from "./ui/badge";
 
 interface Props {
   post: Post;
 }
 
-const font = JetBrains_Mono({ weight: "400", subsets: ["latin"] });
-// const dateFont = VT323({ weight: '400', subsets: ['latin'] });
+const font = Lilita_One({ weight: "400", subsets: ["latin"] });
+const dateFont = VT323({ weight: "400", subsets: ["latin"] });
 
 const PostComponent = ({ post }: Props) => {
   return (
-    <Card
-      key={post?._id}
-      className="overflow-hidden border-primary border rounded-xl shadow-primary group"
-    >
-      <Link
-        href={`/posts/${post?.slug?.current}`}
-        className="block group-hover:bg-primary/85"
-      >
-        <CardHeader className="flex flex-row justify-between items-end py-1.5 text-sm text-right">
-          <h5 className="text-xl font-medium leading-tight text-primary group-hover:text-accent-foreground">
-            {post?.title}
-          </h5>
-          <h5 className={`${font.className}`}>
-            {new Date(post?.publishedAt).toDateString()}
-          </h5>
-        </CardHeader>
-        <div className="p-6">
-          <p className="text-base text-primary group-hover:text-accent-foreground">
-            {post?.excerpt}
-          </p>
-        </div>
-        <div className="border-t-2 border-primary px-6 py-3 space-x-3">
-          {post?.tags?.map((tag) => (
-            <Badge key={tag?._id} className="text-sm lowercase">
-              #{tag?.name}
-            </Badge>
-          ))}
-        </div>
+    <div className={`$cardStyle} group`} key={"post._id"}>
+      <Link href={`/posts/${post?.slug?.current}`}>
+        <h2 className="font-poppins text-2xl dark:text-slate-300">
+          {post?.title}
+        </h2>
+        <p
+          className={`${dateFont.className} font-bold my-2 text-primary font-dateFont dark:group-hover:text-gray-50 group-hover:text-black`}
+        >
+          {new Date(post?.publishedAt).toDateString()}
+        </p>
+        <p className="dark:text-gray-400 mb-4 line-clamp-2">{post?.excerpt}</p>
       </Link>
-    </Card>
+
+      {/* TAGS */}
+
+      <div className="space-x-3">
+        {post?.tags?.map((tag) => (
+          <Badge key={tag?._id}>#{tag?.name}</Badge>
+        ))}
+      </div>
+    </div>
   );
 };
 
 export default PostComponent;
+
+const cardStyle = `
+mb-8
+p-4
+border
+border-gray-900
+rounded-md
+shadow-sm
+shadow-primary
+hover:shadow-md
+hover:bg-primary/80
+hover:text-white
+hover:dark:bg-gray-950
+`;

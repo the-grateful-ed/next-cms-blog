@@ -8,8 +8,8 @@ interface Props {
 
 const Header = ({ title = "", tags = false }: Props) => {
   return (
-    <header className="py-14 px-4 mb-12 text-center border-b dark:border-purple-900">
-      <h2 className="uppercase text-2xl mx-auto max-w-2xl font-bold">
+    <header className="py-8 px-4 text-center border-b dark:border-purple-900">
+      <h2 className="font-poppins text-3xl mx-auto max-w-2xl font-thin">
         {title}
       </h2>
 
