@@ -33,7 +33,7 @@ export default async function Home() {
   return (
     <MainContainer>
       <Hero />
-      <Header title="Articles" tags />
+      <Header title="Recent Posts" tags />
       <div className="space-y-14 py-3 mb-8">
         {posts?.length > 0 &&
           posts?.map((post) => <PostComponent key={post?._id} post={post} />)}
