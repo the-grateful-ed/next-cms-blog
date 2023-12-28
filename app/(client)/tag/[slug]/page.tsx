@@ -1,5 +1,5 @@
 import Header from "@/app/components/header";
-import PostComponent from "@/app/components/PostComponent";
+import PostComponent from "@/app/components/post-component";
 import { Post } from "@/app/utils/interface";
 import { client } from "@/sanity/lib/client";
 import React from "react";

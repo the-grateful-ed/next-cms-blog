@@ -1,5 +1,4 @@
-import Header from "@/app/components/Header";
-import Navbar from "@/app/components/Navbar";
+import Header from "@/app/components/header";
 import { Tag } from "@/app/utils/interface";
 import { client } from "@/sanity/lib/client";
 import Link from "next/link";
@@ -30,7 +29,7 @@ const page = async () => {
         {tags?.length > 0 &&
           tags?.map((tag) => (
             <Link key={tag?._id} href={`/tag/${tag.slug.current}`}>
-              <div className="mb-2 p-2 text-sm lowercase dark:bg-gray-950 border dark:border-gray-900 hover:text-purple-500">
+              <div className="mb-2 p-2 text-sm lowercase text-primary hover:text-pretty/60">
                 #{tag.name} ({tag?.postCount})
               </div>
             </Link>
