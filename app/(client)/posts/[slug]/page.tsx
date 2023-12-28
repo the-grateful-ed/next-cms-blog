@@ -62,7 +62,7 @@ const page = async ({ params }: Params) => {
       itemScope
       itemType="http://schema.org/BlogPosting"
     >
-      <div className="w-full mx-auto mb-12 text-left px-2 sm:px-0">
+      <div className="w-full mx-auto mb-12 text-left px-4 justify-center flex flex-col">
         {/* <img
           src="/brand/og.png"
           className="object-cover w-full h-64 bg-center rounded-lg"
@@ -73,7 +73,7 @@ const page = async ({ params }: Params) => {
           Development
         </p> */}
         <h1
-          className="mb-3 text-3xl font-bold leading-tight md:text-4xl"
+          className="mb-3 w-full text-3xl font-bold leading-tight md:text-4xl"
           itemProp="headline"
           title="{post?.title}"
         >
