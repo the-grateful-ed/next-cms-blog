@@ -8,7 +8,7 @@ const HeaderComponent = () => {
   return (
     <section>
       <div
-        className="relative overflow-hidden bg-cover bg-no-repeat rounded-xl"
+        className="relative overflow-hidden bg-cover bg-no-repeat sm:rounded-xl rounded-none"
         style={{
           backgroundPosition: "50%",
           height: "450px",

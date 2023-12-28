@@ -8,6 +8,12 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import React from "react";
+import {
+  Avatar,
+  AvatarFallback,
+  AvatarImage,
+} from "@/app/components/ui/avatar";
+import { Badge } from "@/app/components/ui/badge";
 
 const dateFont = VT323({ weight: "400", subsets: ["latin"] });
 
@@ -50,22 +56,55 @@ const page = async ({ params }: Params) => {
   }
 
   return (
-    <div className="bg-accent h-full">
-      <Header title={post?.title} />
-      <div className="text-center">
-        <span className={`${dateFont?.className} text-primary`}>
-          {new Date(post?.publishedAt).toDateString()}
-        </span>
-        <div className="mt-5">
+    <article
+      className="px-4 py-12 mx-auto"
+      itemID="#"
+      itemScope
+      itemType="http://schema.org/BlogPosting"
+    >
+      <div className="w-full mx-auto mb-12 text-left px-2 sm:px-0">
+        {/* <img
+          src="/brand/og.png"
+          className="object-cover w-full h-64 bg-center rounded-lg"
+          fill
+          alt="Post Image"
+        /> */}
+        {/* <p className="mt-6 mb-2 text-xs font-semibold tracking-wider uppercase text-primary">
+          Development
+        </p> */}
+        <h1
+          className="mb-3 text-3xl font-bold leading-tight md:text-4xl"
+          itemProp="headline"
+          title="{post?.title}"
+        >
+          <Header title={post?.title} />
+        </h1>
+        <div className="flex mb-2 space-x-2">
           {post?.tags?.map((tag) => (
             <Link key={tag?._id} href={`/tag/${tag.slug.current}`}>
-              <span className="mr-2 p-1 rounded-sm text-sm lowercase">
+              <Badge variant={"secondary"} className="text-sm lowercase">
                 #{tag.name}
-              </span>
+              </Badge>
             </Link>
           ))}
         </div>
+        <Link className="mt-2 flex items-center text-gray-700" href="#">
+          <Avatar>
+            <AvatarImage src="https://github.com/shadcn.png" />
+            <AvatarFallback>CN</AvatarFallback>
+          </Avatar>
+          <div className="ml-2">
+            <p className="text-sm font-semibold text-gray-800">edndacomputer</p>
+            <p className="text-sm text-gray-500">
+              <span className={`${dateFont?.className} text-primary`}>
+                {new Date(post?.publishedAt).toDateString()}
+              </span>
+            </p>
+          </div>
+        </Link>
+      </div>
 
+      <div className="w-full mx-auto prose dark:prose-invert">
         <div className={richTextStyles}>
           <PortableText
             value={post?.body}
@@ -73,7 +112,7 @@ const page = async ({ params }: Params) => {
           />
         </div>
       </div>
-    </div>
+    </article>
   );
 };
 
