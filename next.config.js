@@ -5,9 +5,13 @@ const nextConfig = {
       {
         protocol: "https",
         hostname: "cdn.sanity.io",
-      }
+      },
+      {
+        protocol: "https",
+        hostname: "tecdn.b-cdn.net",
+      },
     ],
-  }
-}
+  },
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;
