@@ -34,7 +34,7 @@ export default async function Home() {
     <MainContainer>
       <Hero />
       <Header title="Recent Posts" tags />
-      <div className="space-y-14 py-3 mb-8">
+      <div className="space-y-6 flex flex-col py-3 mb-8 mx-4">
         {posts?.length > 0 &&
           posts?.map((post) => <PostComponent key={post?._id} post={post} />)}
       </div>

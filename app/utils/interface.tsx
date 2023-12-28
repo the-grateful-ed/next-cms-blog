@@ -1,5 +1,5 @@
 export interface Post {
-  title: string
+  title: string;
   slug: { current: string };
   publishedAt: string;
   excerpt: string;
@@ -12,5 +12,5 @@ export interface Tag {
   name: string;
   slug: { current: string };
   _id: string;
-  postCount?: number
+  postCount?: number;
 }

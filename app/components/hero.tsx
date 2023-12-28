@@ -20,7 +20,7 @@ const HeaderComponent = () => {
           style={{ backgroundColor: "rgba(0, 0, 0, 0.75)" }}
         >
           <div className="flex h-full items-center justify-center">
-            <div className="px-6 text-center text-white md:px-12">
+            <div className="px-0 text-center text-white md:px-12">
               <HeaderElement />
               <SocialIcons />{" "}
               <Button type="button" size={"lg"} className="text-black">
