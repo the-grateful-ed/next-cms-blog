@@ -30,9 +30,9 @@ export default function RootLayout({
       <body className="">
         <MainContainer>
           <Provider>
-            <div className="flex h-screen flex-col justify-between font-poppins">
+            <div className="flex min-h-screen flex-col justify-between font-poppins">
               <Navbar />
-              <main className="mb-auto">{children}</main>
+              <main className="mb-auto flex-1 bg-accent">{children}</main>
               <Footer />
             </div>
           </Provider>
