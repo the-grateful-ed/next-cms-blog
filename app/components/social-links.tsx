@@ -75,7 +75,7 @@ export default function Footer() {
               <Link
                 key={item.name}
                 href={item.href}
-                className="text-secondary hover:text-primary"
+                className="text-primary hover:text-primary/50"
               >
                 <span className="sr-only">{item.name}</span>
                 <item.icon className="h-14 w-14" aria-hidden="true" />
