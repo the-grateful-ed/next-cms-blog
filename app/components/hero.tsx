@@ -6,9 +6,9 @@ import Image from "next/image";
 
 const HeaderComponent = () => {
   return (
-    <section>
+    <section className="overflow-hidden bg-transparent">
       <div
-        className="relative overflow-hidden bg-cover bg-no-repeat sm:rounded-xl rounded-none"
+        className="relative overflow-hidden bg-cover bg-no-repeat sm:rounded-t-2xl rounded-none"
         style={{
           backgroundPosition: "50%",
           height: "450px",
@@ -28,7 +28,12 @@ const HeaderComponent = () => {
             <div className="px-0 text-center text-white md:px-12">
               <HeaderElement />
               <SocialIcons />{" "}
-              <Button type="button" size={"lg"} className="text-black">
+              <Button
+                type="button"
+                variant={"secondary"}
+                size={"lg"}
+                className="text-2xl uppercase"
+              >
                 My Resume
               </Button>
             </div>

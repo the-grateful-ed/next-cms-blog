@@ -18,17 +18,10 @@ const PostComponent = ({ post }: Props) => {
       href={`/posts/${post?.slug?.current}`}
       className={`$cardStyle} group`}
     >
-      <Card
-        key={"post._id"}
-        className="group-hover:bg-primary/90 group-hover:text-gray-800"
-      >
+      <Card key={"post._id"} className="=">
         <CardHeader>
-          <h2 className="font-poppins text-2xl dark:text-slate-300">
-            {post?.title}
-          </h2>
-          <p
-            className={`${dateFont.className} font-bold my-2 text-primary font-dateFont dark:group-hover:text-gray-50 group-hover:text-black`}
-          >
+          <h2 className="font-poppins text-2xl">{post?.title}</h2>
+          <p className="font-mono font-bold my-2 text-primary">
             {new Date(post?.publishedAt).toDateString()}
           </p>
         </CardHeader>
@@ -57,17 +50,3 @@ const PostComponent = ({ post }: Props) => {
 };
 
 export default PostComponent;
-
-const cardStyle = `
-mb-8
-p-4
-border
-border-gray-900
-rounded-md
-shadow-sm
-shadow-primary
-hover:shadow-md
-hover:bg-primary/80
-hover:text-white
-hover:dark:bg-gray-950
-`;

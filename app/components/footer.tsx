@@ -76,21 +76,21 @@ const navigation = {
 
 export default function Footer() {
   return (
-    <footer className="mb-2 bg-accent rounded-b-xl">
+    <footer className="mb-2 bg-gray-300 rounded-b-xl">
       <div className="mx-auto max-w-7xl overflow-hidden py-12 px-4 sm:px-6 lg:px-8 rounded-b-xl">
         <div className="mt-8 flex justify-center space-x-6">
           {navigation.social.map((item) => (
             <Link
               key={item.name}
               href={item.href}
-              className="text-gray-400 hover:text-gray-500"
+              className="text-primary hover:text-gray-500"
             >
               <span className="sr-only">{item.name}</span>
               <item.icon className="h-6 w-6" aria-hidden="true" />
             </Link>
           ))}
         </div>
-        <p className="mt-8 text-center text-base text-gray-400">
+        <p className="mt-8 text-center text-base text-primary">
           &copy; 2024 edndacomputer, Inc. All rights reserved.
         </p>
       </div>

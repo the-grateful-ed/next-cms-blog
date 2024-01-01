@@ -16,7 +16,7 @@ export default function Navbar() {
             <div className="items-center flex flex-row">
               <div className="mx-2">
                 <svg
-                  className="w-[35px] h-[35px] fill-[#8e8e8e]"
+                  className="w-[35px] h-[35px] fill-accent"
                   viewBox="0 0 640 512"
                   xmlns="http://www.w3.org/2000/svg"
                 >
@@ -24,8 +24,8 @@ export default function Navbar() {
                 </svg>
               </div>
               <div className="font-poppins text-3xl text-primary">
-                <span className="">ed</span>
-                <span className=" text-primary/80 font-extrabold">nda</span>
+                <span className="text-gray-100">ed</span>
+                <span className=" text-gray-50 font-extrabold">nda</span>
                 <span className="  text-foreground font-thin">computer</span>
               </div>
             </div>
